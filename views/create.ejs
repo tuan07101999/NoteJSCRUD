@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Thêm tài khoản</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/create" class="needs-validation" method="POST" novalidate>
+            <div class="form-group">
+                Mã sinh viên:<input type="text" class="form-control" id="MaSV" placeholder="Nhap ma sinh vien" name="MaSV" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div>
+            <div class="form-group">
+                Tên sinh viên:<input type="text" class="form-control" id="HoTen" placeholder="Ten sinh vien" name="HoTen" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div>
+            <div class="form-group">
+                Năm sinh:<input type="date" class="form-control" id="NamSinh" placeholder="Nam sinh" name="NamSinh" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div>
+            <div class="form-group">
+                <label for="Lop">Mã lớp:</label>
+                <input type="text" class="form-control" id="Lop" placeholder="Ma lop" name="Lop" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div>
+            <div class="form-group">
+                <label for="Lop">So Thich:</label>
+                <input type="text" class="form-control" id="SoThich" placeholder="SoThich" name="SoThich" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="avatar">Avatar:</label>
+                <input type="file" class="form-control" id="avatar" placeholder="SoThich" name="SoThich" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Hãy nhập vào thông tin</div>
+            </div> -->
+            <div>
+                <a href="/" ><button type="button" class="btn btn-info">Quay lại</button></a>
+                <input type="submit" style="margin-left: 900px;" class="btn btn-primary" value="Tao tai khoan" />
+            </div>
+        </form>
+        <hr>
+        
+    </div>
+
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>

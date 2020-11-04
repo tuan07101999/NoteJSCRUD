@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Danh sách sinh viên</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 10px;">
+        <div>
+            <a href="/create"><button type="button" class="btn button" >Thêm</button></a>
+        </div>
+        <div style="margin-top: 10px;">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Mã sinh viên</th>
+                        <th scope="col">Tên sinh viên</th>
+                        <th scope="col">Năm sinh</th>
+                        <th scope="col">Lớp</th>
+                        <th scope="col">Sở thích</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <% for (var i = 0;i < lst.length; i++) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= lst[i].id %>
+                        </th>
+                        <td>
+                            <%= lst[i].MaSV %>
+                        </td>
+                        <td>
+                            <%= lst[i].HoTen %>
+                        </td>
+                        <td>
+                            <%= lst[i].NamSinh %>
+                        </td>
+                        <td>
+                            <%= lst[i].Lop %>
+                        </td>
+                        <td>
+                            <%= lst[i].SoThich %>
+                        </td>
+                        <td>
+                          <a href="/dlt/<%= lst[i].id %>"><button type="button" class="btn button">Delete</button></a>
+                        </td>
+                    </tr>
+                    <% }%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
